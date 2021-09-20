@@ -1,0 +1,4 @@
+<div *ngFor="let user of users">
+  id:{{ user.id }} || name : {{ user.name }} || username: {{ user.username }}
+  <a routerLink="/userTodos/{{ user.id }}">voir todo</a>
+</div>

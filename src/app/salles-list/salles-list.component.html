@@ -1,0 +1,4 @@
+<div *ngFor="let salle of salles">
+  id :{{ salle.id }} || nom :{{ salle.nom }} || capacite:{{ salle.capacite }}
+  <a routerLink="/salle/{{ salle.id }}">détails</a>
+</div>

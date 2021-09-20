@@ -1,0 +1,7 @@
+<form [formGroup]="userForm">
+  <input type="text" formControlName="firstName" />
+  <input type="text" formControlName="lastName" />
+  <input type="number" formControlName="age" />
+
+  <button (click)="sendeventparent()">{{ btnName }}</button>
+</form>

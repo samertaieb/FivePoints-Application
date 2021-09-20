@@ -1,0 +1,161 @@
+<form [formGroup]="userForm" (ngSubmit)="ajouter()">
+  <mat-form-field appearance="legacy">
+    <mat-label>Nom</mat-label>
+    <input matInput placeholder="Votre nom" formControlName="nom" />
+    <mat-error
+      *ngIf="
+        userForm.controls.nom.errors?.required && userForm.controls.nom.touched
+      "
+      >obligatoire</mat-error
+    >
+    <mat-error
+      *ngIf="
+        userForm.controls.nom.errors?.minlength && userForm.controls.nom.touched
+      "
+      >longueur</mat-error
+    >
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+
+  <br />
+  <mat-form-field appearance="legacy">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="votre email" formControlName="email" />
+    <mat-error
+      *ngIf="
+        userForm.controls.email.errors?.required &&
+        userForm.controls.email.touched
+      "
+      >obligatoire</mat-error
+    >
+    <mat-error
+      *ngIf="
+        userForm.controls.email.errors?.minlength &&
+        userForm.controls.email.touched
+      "
+      >longueur</mat-error
+    >
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+
+  <br />
+  <form formGroupName="payment">
+    <fieldset>
+      <mat-form-field appearance="legacy">
+        <mat-label>type de carte</mat-label>
+        <input
+          matInput
+          placeholder="num de carte"
+          formControlName="typeCarte"
+        />
+        <mat-error
+          *ngIf="
+            userForm.controls.payment.get('typeCarte').errors?.required &&
+            userForm.controls.payment.get('typeCarte').touched
+          "
+          >obligatoire</mat-error
+        >
+
+        <mat-hint>Hint</mat-hint> </mat-form-field
+      ><br />
+      <mat-form-field appearance="legacy">
+        <mat-label>num de carte</mat-label>
+        <input
+          matInput
+          placeholder="num de carte"
+          formControlName="NumeroCarte"
+        />
+        <mat-error
+          *ngIf="
+            userForm.controls.payment.get('NumeroCarte').errors?.required &&
+            userForm.controls.payment.get('NumeroCarte').touched
+          "
+          >obligatoire</mat-error
+        >
+        <mat-error
+          *ngIf="
+            userForm.controls.payment.get('NumeroCarte').errors?.pattern &&
+            userForm.controls.payment.get('NumeroCarte').touched
+          "
+          >lazem nwamer</mat-error
+        >
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+      <!-- <input type="text" placeholder="num card" formControlName="NumeroCarte" />
+      <div
+        *ngIf="
+          userForm.controls.payment.get('NumeroCarte').errors?.required &&
+          userForm.controls.payment.get('NumeroCarte').touched
+        "
+      >
+        obligatoire
+      </div>
+      <div
+        *ngIf="
+          userForm.controls.payment.get('NumeroCarte').errors?.pattern &&
+          userForm.controls.payment.get('NumeroCarte').touched
+        "
+      >
+        lezem nwamer
+      </div> -->
+      <br />
+      <mat-form-field appearance="legacy">
+        <mat-label>date expiration</mat-label>
+        <input
+          matInput
+          placeholder="date expiration"
+          formControlName="dateExpiration"
+        />
+        <mat-error
+          *ngIf="
+            userForm.controls.payment.get('dateExpiration').errors?.required &&
+            userForm.controls.payment.get('dateExpiration').touched
+          "
+          >obligatoire</mat-error
+        >
+        <mat-error
+          *ngIf="
+            userForm.controls.payment.get('dateExpiration').errors?.pattern &&
+            userForm.controls.payment.get('dateExpiration').touched
+          "
+          >lazem nwamer</mat-error
+        >
+
+        <mat-hint>Hint</mat-hint> </mat-form-field
+      ><br />
+      <mat-form-field appearance="legacy">
+        <mat-label>num de carte</mat-label>
+        <input matInput placeholder="code" formControlName="code" />
+        <mat-error
+          *ngIf="
+            userForm.controls.payment.get('code').errors?.required &&
+            userForm.controls.payment.get('code').touched
+          "
+          >obligatoire</mat-error
+        >
+        <mat-error
+          *ngIf="
+            userForm.controls.payment.get('code').errors?.pattern &&
+            userForm.controls.payment.get('code').touched
+          "
+          >lazem nwamer</mat-error
+        >
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </fieldset>
+  </form>
+  <!-- <div formArrayName="skills">
+    <div *ngFor="let skill of skills().controls">
+      <mat-form-field appearance="legacy">
+        <mat-label>skills</mat-label>
+        <input matInput placeholder="" formControlName="skill" />
+
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </div>
+  </div> -->
+  <button type="submit">ajouter</button>
+  <!-- [disabled]="!userForm.status == 'invalid'" -->
+</form>
+
+<!-- <input type="text" [(ngModel)]="" /> -->

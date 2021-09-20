@@ -1,0 +1,7 @@
+<div *ngFor="let list of listUsers">
+  id:{{ list.id }} || name:{{ list.name }} || username: {{ list.username }}||
+  email: {{ list.email }}
+</div>
+<input type="text" #un placeholder="user name" />
+<button (click)="verification(un)">verifier</button>
+<div *ngIf="affiche">{{ verifier }}</div>

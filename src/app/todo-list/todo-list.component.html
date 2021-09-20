@@ -1,0 +1,6 @@
+<div *ngFor="let todo of todolist">
+  userId: {{ todo.userId }} || id: {{ todo.id }} || title:
+  {{ todo.title }} completed: {{ todo.completed }}
+</div>
+<button (click)="affichage()">bilan</button>
+<div *ngIf="affiche">{{ bilan }}</div>

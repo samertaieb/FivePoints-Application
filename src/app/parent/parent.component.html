@@ -1,0 +1,6 @@
+<div *ngFor="let user of users; let i = index">
+  first name : {{ user.firstName }} || last name: {{ user.lastName }} || age:
+  {{ user.age }} <br />
+  <button (click)="passinformationToChild(user, i)">details</button>
+</div>
+<app-child [data]="user" (eventUpdate)="modifAdd($event)"></app-child>
